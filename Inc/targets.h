@@ -34,6 +34,8 @@
 // #define GD32SKYSTARS25
 // #define GD32SKYSTARS30
 // #define GD32SKYSTARS40
+
+// #define TRON_64K_V1_G071
 #endif
 
 // used to hold a port/pin in a single 16 bit integer
@@ -2247,6 +2249,22 @@
 
 /*******************************   G071 Targets
  * *********************************/
+#ifdef TRON_64K_V1_G071
+#define FILE_NAME "TRON_64K_V1_G071"
+#define FIRMWARE_NAME "TRON G071"
+#define DEAD_TIME 60
+#define MILLIVOLT_PER_AMP 50   // V = 0.001 * 50 * I + 0  =>  1000mv = 20A => 50mV/A  
+#define CURRENT_OFFSET 0
+#define TARGET_VOLTAGE_DIVIDER 110  // TARGET_VOLTAGE_DIVIDER = 10 * (1 + Rtop/Rbottom) = 10 * (1+ 10/1) = 110
+#define HARDWARE_GROUP_G0_A
+#define USE_SERIAL_TELEMETRY
+#define SIXTY_FOUR_KB_MEMORY
+
+#define CURRENT_ADC_CHANNEL LL_ADC_CHANNEL_4
+#define CURRENT_ADC_PIN LL_GPIO_PIN_4
+#define VOLTAGE_ADC_CHANNEL LL_ADC_CHANNEL_6
+#define VOLTAGE_ADC_PIN LL_GPIO_PIN_6
+#endif
 
 #ifdef AIRBOT_PHOENIX_12S_G071
 #define FILE_NAME "AIRBOT_PHOENIX_12S_G071"
